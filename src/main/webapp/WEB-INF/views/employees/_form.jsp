@@ -6,7 +6,7 @@
 <c:set var="action" value="${ForwardConst.ACT_EMP.getValue()}" />
 <c:set var="commIdx" value="${ForwardConst.CMD_INDEX.getValue()}" />
 
-<c:if test="${erros != null}">
+<c:if test="${errors != null}">
 	<div id="flush_error">
 		入力内容にエラーがあります。<br />
 		<c:forEach var="error"  items="${errors}">
@@ -28,8 +28,8 @@
 
 <label for="${AttributeConst.EMP_ADMIN_FLG.getValue()}">権限</label><br />
 <select name="${AttributeConst.EMP_ADMIN_FLG.getValue()}" id="${AttributeConst.EMP_ADMIN_FLG.getValue()}">
-	<option value="${AttributeConst.ROLE_GENERAL.getIntegerValue() }"<c:if test="employee.adminFlag == AttributeConst.ROLE_GENERAL.getIntegerValue() }"> selected</c:if>>一般</option>
-	<option value="${AttributeConst.ROLE_ADMIN.getIntegerValue() }"<c:if test="employee.adminFlag == AttributeConst.ROLE_ADMIN.getIntegerValue() }"> selected</c:if>>管理者</option>
+    <option value="${AttributeConst.ROLE_GENERAL.getIntegerValue()}"<c:if test="${employee.adminFlag == AttributeConst.ROLE_GENERAL.getIntegerValue()}"> selected</c:if>>一般</option>
+    <option value="${AttributeConst.ROLE_ADMIN.getIntegerValue()}"<c:if test="${employee.adminFlag == AttributeConst.ROLE_ADMIN.getIntegerValue()}"> selected</c:if>>管理者</option>
 </select>
 <br /><br />
 
